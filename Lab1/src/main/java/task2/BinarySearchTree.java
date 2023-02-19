@@ -2,6 +2,7 @@ package bst;
 
 public class BinarySearchTree {
 
+    // node class
     static class Node {
         int key;
         Node left, right;
