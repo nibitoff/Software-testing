@@ -1,6 +1,4 @@
-package main.java;
-
-import java.util.Scanner;
+package main.java.task1;
 
 public class ArcTanFunction {
     public static Double getArcTan(double x) {

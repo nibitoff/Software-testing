@@ -1,6 +1,6 @@
-package test.java;
+package test.java.task1;
 
-import main.java.ArcTanFunction;
+import main.java.task1.ArcTanFunction;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
