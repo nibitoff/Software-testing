@@ -45,7 +45,7 @@ class DomainModelTest {
     }
 
     @Test
-    public void testCLosedDoorLocationChange() {
+    public void testClosedDoorLocationChange() {
         Human person = people.get("captain");
 
         int t = rooms.get("Bridge").getNumberOfPeople();
