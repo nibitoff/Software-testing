@@ -1,14 +1,10 @@
 package main.java.task3;
 
 public class Intruder extends Human{
-    public String name;
     public boolean caughtStatus;
 
-    public Intruder(String name, String gender, Room location, boolean isCaught) {
-        this.name = name;
-        this.gender = gender;
-        this.location = location;
-        this.caughtStatus = false;
+    public Intruder(String name, String emotion, Room location){
+        super(name, emotion, location);
     }
 
     public Intruder() {

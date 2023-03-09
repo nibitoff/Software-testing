@@ -1,18 +1,17 @@
 package main.java.task3;
 
 public class Door {
-    private boolean status;
+    private boolean opened;
 
-    public Door(boolean status) {
-        this.status = status;
+    public Door(boolean opened) {
+        this.opened = opened;
     }
 
-
-    public boolean isStatus() {
-        return status;
+    public boolean isOpened() {
+        return opened;
     }
 
-    public void setStatus(boolean status) {
-        this.status = status;
+    public void setOpened(boolean opened) {
+        this.opened = opened;
     }
 }

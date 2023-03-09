@@ -1,43 +1,47 @@
 package main.java.task3;
 
 public class Human {
-    public String gender;
-    public String bodyPart;
+    public String name;
     public String emotions;
-    public String job;
     public Room location;
 
     public Human() {
     }
 
+    public Human(String name, String emotions, Room location) {
+        this.name = name;
+        this.emotions = emotions;
+        this.location = location;
+    }
+
     public void openDoor(Door door){
-        door.setStatus(true);
-        System.out.println( "Door is opened");
+        door.setOpened(true);
+        System.out.println("Door is opened.");
     }
     public void closeDoor(Door door){
-        door.setStatus(false);
-        System.out.println("Door is closed");
+        door.setOpened(false);
+        System.out.println("Door is closed.");
     }
 
     public void changeLocation(Room roomFrom, Room roomTo){
-        roomFrom.setNumberOfPeople(roomFrom.getNumberOfPeople() - 1);
-        roomTo.setNumberOfPeople(roomTo.getNumberOfPeople() + 1);
-        this.location = roomTo;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public String getBodyPart() {
-        return bodyPart;
+        if(location == roomFrom && roomFrom.getDoor().isOpened()){
+            roomFrom.setNumberOfPeople(roomFrom.getNumberOfPeople() - 1);
+            roomTo.setNumberOfPeople(roomTo.getNumberOfPeople() + 1);
+            this.location = roomTo;
+            System.out.println("[human] " + this.name + " changed location: " + roomFrom.getName()  + " -> " + roomTo.getName() + ".");
+        }
+        System.out.println("Current [human] " + this.name + "'s location is " + this.getLocation().getName() + ".");
     }
 
     public String getEmotions() {
         return emotions;
     }
 
-    public String getJob() {
-        return job;
+    public String getName() {
+        return name;
+    }
+
+    public Room getLocation() {
+        return location;
     }
 }
