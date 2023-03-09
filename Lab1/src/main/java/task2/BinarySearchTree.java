@@ -130,6 +130,18 @@ public class BinarySearchTree {
         inorderRec(this.root);
     }
 
+    private int rec(Node root, int n){
+        if (root != null) {
+            n = rec(root.left, n);
+            n = rec(root.right, n);
+        } else n += 1;
+        return n;
+    }
+
+    public int getSz(){
+        return rec(root, 0) - 1;
+    }
+
     public static void main(String[] args) {
         BinarySearchTree tree = new BinarySearchTree();
         /* Let us create following BST
@@ -145,6 +157,7 @@ public class BinarySearchTree {
         tree.insert(70);
         tree.insert(60);
         tree.insert(80);
+        System.out.println(tree.getSz());
 
         tree.inorder();
         System.out.println("smallest is " + tree.minvalue());
@@ -152,6 +165,7 @@ public class BinarySearchTree {
 
         System.out.println("\nDelete 20");
         tree.deleteKey(20);
+        System.out.println(tree.getSz());
         System.out.println(
                 "Inorder traversal of the modified tree");
         tree.inorder();
