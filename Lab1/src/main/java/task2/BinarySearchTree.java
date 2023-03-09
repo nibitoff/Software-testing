@@ -53,7 +53,24 @@ public class BinarySearchTree {
         return minv;
     }
 
-    /* A recursive function to delete an existing key in BST */
+    public int minvalue() {
+        return minValue(this.root);
+    }
+
+    private int maxValue(Node root) {
+        int maxv = root.key;
+        while (root.right != null) {
+            maxv = root.right.key;
+            root = root.right;
+        }
+        return maxv;
+    }
+
+    public int maxvalue() {
+        return maxValue(this.root);
+    }
+
+        /* A recursive function to delete an existing key in BST */
     private Node deleteRec(Node root, int key) {
         if (root == null)
             return root;
@@ -94,6 +111,21 @@ public class BinarySearchTree {
         }
     }
 
+    private boolean hasValue(Node root, int key){
+        if (root == null)
+            return false;
+
+        if (key < root.key)
+            return hasValue(root.left, key);
+        else if (key > root.key)
+            return hasValue(root.right, key);
+        else return true;
+    }
+
+    public boolean hasvalue(int key){
+        return hasValue(root, key);
+    }
+
     public void inorder() {
         inorderRec(this.root);
     }
@@ -115,24 +147,37 @@ public class BinarySearchTree {
         tree.insert(80);
 
         tree.inorder();
+        System.out.println("smallest is " + tree.minvalue());
+        System.out.println("biggest is " + tree.maxvalue());
 
         System.out.println("\nDelete 20");
         tree.deleteKey(20);
         System.out.println(
                 "Inorder traversal of the modified tree");
         tree.inorder();
+        System.out.println("smallest is " + tree.minvalue());
+        System.out.println("biggest is " + tree.maxvalue());
 
         System.out.println("\nDelete 30");
         tree.deleteKey(30);
         System.out.println(
                 "Inorder traversal of the modified tree");
         tree.inorder();
+        System.out.println("smallest is " + tree.minvalue());
+        System.out.println("biggest is " + tree.maxvalue());
 
         System.out.println("\nDelete 50");
         tree.deleteKey(50);
         System.out.println(
                 "Inorder traversal of the modified tree");
         tree.inorder();
+        System.out.println("smallest is " + tree.minvalue());
+        System.out.println("biggest is " + tree.maxvalue());
+        System.out.println(tree.hasvalue( 100));
+        System.out.println(tree.hasvalue( 30));
+        System.out.println(tree.hasvalue( 400));
+        System.out.println(tree.hasvalue( 80));
+
     }
 }
 
