@@ -21,6 +21,7 @@ class DomainModelTest {
 
         rooms.put("Cabin", new Room("Cabin", 0, door));
         rooms.put("Bridge", new Room("Bridge", 0, door));
+        rooms.put("Strange Room", new Room("Rum Storage", 0, door));
 
         people.put("captain", new Captain("Jack Sparrow", "neutral", rooms.get("Bridge")));
         people.put("intruder1", new Intruder("William",  "neutral", rooms.get("Bridge")));
@@ -35,7 +36,9 @@ class DomainModelTest {
         Human person = people.get("captain");
 
         int t = rooms.get("Bridge").getNumberOfPeople();
-        person.changeLocation(rooms.get("Cabin"), rooms.get("Bridge"));
+        person.openDoor(door);
+        person.changeLocation(rooms.get("Cabin"), rooms.get("Strange Room"));
+        person.closeDoor(door);
 
         Assertions.assertEquals(rooms.get("Cabin").getNumberOfPeople(), 0);
         Assertions.assertEquals(rooms.get("Bridge").getNumberOfPeople(), t);
