@@ -31,9 +31,9 @@ public class BinarySearchTree {
         }
 
         /* Otherwise, recur down the tree */
-        else if (key < root.key)
-            root.left = insertRec(root.left, key);
         else if (key > root.key)
+            root.left = insertRec(root.left, key);
+        else if (key < root.key)
             root.right = insertRec(root.right, key);
 
         /* return the (unchanged) node pointer, because key matches */
@@ -119,7 +119,7 @@ public class BinarySearchTree {
             return hasValue(root.left, key);
         else if (key > root.key)
             return hasValue(root.right, key);
-        else return true;
+        else return false;
     }
 
     public boolean hasvalue(int key){

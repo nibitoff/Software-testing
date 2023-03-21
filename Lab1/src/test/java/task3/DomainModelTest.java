@@ -40,7 +40,7 @@ class DomainModelTest {
         person.changeLocation(rooms.get("Cabin"), rooms.get("Strange Room"));
         person.closeDoor(door);
 
-        Assertions.assertEquals(rooms.get("Cabin").getNumberOfPeople(), 0);
+        Assertions.assertEquals(rooms.get("Strange Room").getNumberOfPeople(), 0);
         Assertions.assertEquals(rooms.get("Bridge").getNumberOfPeople(), t);
     }
 
