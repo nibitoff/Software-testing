@@ -1,6 +1,6 @@
 package logarithmic;
 
-public class NaturalLogarithm  {
+public class NaturalLogarithm {
 
     public static double evalLn(double x, double eps) {
         if (Double.isNaN(x) || x < (double) 0) {
@@ -10,17 +10,19 @@ public class NaturalLogarithm  {
         } else if (x == 0.0) {
             return Double.NEGATIVE_INFINITY;
         }
-        x -= 1;
 
-        // ln(1+a): ряд сходится для |a| < 1
         double res = 0;
         int step = 1;
-        double addition = Math.pow(-1, step + 1) * Math.pow(x, step) / step;
+//        double addition = Math.pow(-1, step + 1) * Math.pow(x, step) / step;
+        double addition = (x - 1) / (x + 1);
+        double c = Math.pow(x - 1, 2) / Math.pow(x + 1, 2);
         while (Math.abs(addition) > eps / 2) {
-            addition = Math.pow(-1, step + 1) * Math.pow(x, step) / step;
             res += addition;
+//            addition = Math.pow(-1, step + 1) * Math.pow(x, step) / step;
+            addition = (2 * step - 1) * addition * c / (2 * step + 1);
             step++;
         }
+        res *= 2;
         return res;
     }
 }
