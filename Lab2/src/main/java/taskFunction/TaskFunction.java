@@ -47,20 +47,8 @@ public class TaskFunction {
     public static void main(String[] args) {
         System.out.println("lab 2");
 
-        CommonLogarithm log = new CommonLogarithm();
-        System.out.println(log.log(2, 8, 1e-6));
+        TaskFunction f = new TaskFunction();
 
-        Sin sin = new Sin();
-        System.out.println(sin.sin(0, 0.000001));
-
-        Cos cos  = new Cos();
-        System.out.println(cos.cos(0, 1e-6));
-
-        Sec sec = new Sec();
-        System.out.println(sec.sec(0, 0.00001));
-
-        Csc csc = new Csc();
-        System.out.println(csc.csc(Math.PI / 2, 0.00001));
-
+//        float res = f.evalTask(-0.523599, 0.000001);
     }
 }
