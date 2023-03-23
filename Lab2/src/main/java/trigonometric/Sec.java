@@ -1,10 +1,5 @@
 package trigonometric;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVPrinter;
-import java.io.IOException;
-import java.io.Writer;
-
 public class Sec {
     public double sec(double x, double eps) {
         Cos cos = new Cos();

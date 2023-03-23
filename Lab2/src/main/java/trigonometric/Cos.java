@@ -1,11 +1,5 @@
 package trigonometric;
 
-import org.apache.commons.csv.CSVFormat;
-import org.apache.commons.csv.CSVPrinter;
-
-import java.io.IOException;
-import java.io.Writer;
-
 public class Cos {
     public double cos(double x, double eps) {
         Sin sin = new Sin();
