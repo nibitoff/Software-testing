@@ -107,7 +107,7 @@ public class TaskFunctionTest {
 
 
     @ParameterizedTest
-    @CsvFileSource(resources = "/src/main/java/resources/Inputs/FunctionIn.csv")
+    @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
     void testFunctionWithMocks(double value, double expected) {
         TaskFunction function = new TaskFunction(logMock, lnMock, secMock, cscMock, sinMock);
         Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
