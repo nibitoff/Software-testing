@@ -30,8 +30,8 @@ public class TaskFunction {
         this.sin = sin;
     }
 
-    // ((sec(x)^2 + csc(x))^6)/sin(x) x >= 0
-    // (( ((log base 3 x + log base 5 x) / (ln x / log base 2 x)) - log  base 3 x) * log  base 2 x)^2 < 0
+    // ((sec(x)^2 + csc(x))^6)/sin(x) x <= 0
+    // (( ((log base 3 x + log base 5 x) / (ln x / log base 2 x)) - log  base 3 x) * log  base 2 x)^2 > 0
     public double evalTask(double x, double eps) {
         double res;
         if (x < 0 || x < eps) {
