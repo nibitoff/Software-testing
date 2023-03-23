@@ -1,6 +1,16 @@
 package trigonometric;
 
 public class Sec {
+    private final Cos cos;
+
+    public Sec(Cos cos) {
+        this.cos = cos;
+    }
+
+    public Sec() {
+        this.cos = new Cos();
+    }
+
     public double sec(double x, double eps) {
         Cos cos = new Cos();
         double result;

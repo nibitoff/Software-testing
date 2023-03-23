@@ -114,18 +114,27 @@ public class TaskFunctionTest {
 
     }
 
-//    @ParameterizedTest
-//    @CsvFileSource(resources = "/CsvFiles/Inputs/SystemIn.csv")
-//    void testWithSec(double value, double expected) {
-//        TaskFunction function = new TaskFunction(new Sec(cosMock), lnMock, logMock);
-//        Assertions.assertEquals(expected, function.SystemSolve(value, functionEps), eps);
-//    }
-
-
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
+    void testFunctionOnCsc(double value, double expected) {
+        TaskFunction function = new TaskFunction(logMock, lnMock, secMock, new Csc(sinMock), sinMock);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+    }
 
     @ParameterizedTest
-    @ValueSource(ints = {1, 2, 3})
-    public void simpleTest(int value) {
-        System.out.println(value);
+    @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
+    void testFunctionOnSec(double value, double expected) {
+        TaskFunction function = new TaskFunction(logMock, lnMock, new Sec(cosMock), cscMock, sinMock);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
     }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
+    void testFunctionOnSin(double value, double expected) {
+        TaskFunction function = new TaskFunction(logMock, lnMock, new Sec(cosMock), cscMock, sinMock);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+    }
+
+
+
 }
