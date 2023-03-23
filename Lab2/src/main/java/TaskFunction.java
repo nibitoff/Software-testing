@@ -5,30 +5,25 @@ import trigonometric.Csc;
 import trigonometric.Sec;
 import trigonometric.Sin;
 
-import java.util.Scanner;
+import static logarithmic.CommonLogarithm.evalLog;
+import static trigonometric.Cos.evalCos;
+import static trigonometric.Csc.evalCsc;
+import static trigonometric.Sec.evalSec;
+import static trigonometric.Sin.evalSin;
 
 public class TaskFunction {
     public static void main (String[] args){
         System.out.println("lab 2");
-        Scanner s = new Scanner(System.in);
-//        float f = s.nextFloat();
-//        NaturalLogarithm ln = new NaturalLogarithm();
-//        System.out.println(ln.series(f, 1e-6));
 
-        CommonLogarithm log = new CommonLogarithm();
-        System.out.println(log.eval(0.3, 1.3, 1e-6));
+        System.out.println(evalLog(0.3, 1.3, 1e-6));
 
-        Sin sin = new Sin();
-        System.out.println(sin.sin(Math.PI,1e-15));
+        System.out.println(evalSin(Math.PI,1e-15));
 
-        Cos cos = new Cos();
-        System.out.println(cos.cos(0, 1e-6));
+        System.out.println(evalCos(0, 1e-6));
 
-        Sec sec = new Sec();
-        System.out.println(sec.sec(0, 0.00001));
+        System.out.println(evalSec(0, 0.00001));
 
-        Csc csc = new Csc();
-        System.out.println(csc.csc(Math.PI/2, 0.00001));
+        System.out.println(evalCsc(Math.PI/2, 0.00001));
 
     }
 }
