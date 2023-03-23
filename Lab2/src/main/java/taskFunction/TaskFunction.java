@@ -51,7 +51,7 @@ public class TaskFunction {
         System.out.println(log.log(2, 8, 1e-6));
 
         Sin sin = new Sin();
-        System.out.println(sin.sin(Math.PI, 1e-15));
+        System.out.println(sin.sin(0, 0.000001));
 
         Cos cos  = new Cos();
         System.out.println(cos.cos(0, 1e-6));

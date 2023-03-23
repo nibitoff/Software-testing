@@ -111,14 +111,6 @@ public class TaskFunctionTest {
     void testFunctionWithMocks(double value, double expected) {
         TaskFunction function = new TaskFunction(logMock, lnMock, secMock, cscMock, sinMock);
         Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
-/*
-        try {
-            Assertions.assertEquals(expected, function.writeResultToCSV(value, functionEps,
-                    new FileWriter("C:\\Users\\egorm\\IdeaProjects\\TpoLab2\\src\\main\\resources\\CsvFiles\\Outputs\\SystemOut.csv", true)), eps);
-        } catch (IOException e) {
-            System.err.println("Да как ты это делаешь ");
-        }
-*/
 
     }
 
