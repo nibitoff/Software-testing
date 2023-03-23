@@ -1,19 +1,37 @@
 package taskFunction;
 
+import logarithmic.CommonLogarithm;
+import logarithmic.NaturalLogarithm;
+import trigonometric.Cos;
+import trigonometric.Csc;
+import trigonometric.Sec;
+import trigonometric.Sin;
+
 import static logarithmic.CommonLogarithm.evalLog;
 import static logarithmic.NaturalLogarithm.evalLn;
-import static trigonometric.Cos.evalCos;
-import static trigonometric.Csc.evalCsc;
-import static trigonometric.Sec.evalSec;
-import static trigonometric.Sin.evalSin;
 
 public class TaskFunction {
     // ((sec(x)^2 + csc(x))^6)/sin(x) x >= 0
     // (( ((log base 3 x + log base 5 x) / (ln x / log base 2 x)) - log  base 3 x) * log  base 2 x)^2 < 0
-    public static double evalTask(double x, double eps) {
+
+    CommonLogarithm log;
+    NaturalLogarithm ln;
+    Sec sec;
+    Csc csc;
+    Sin sin;
+
+    public TaskFunction(){
+        log = new CommonLogarithm();
+        ln = new NaturalLogarithm();
+        sec = new Sec();
+        csc = new Csc();
+        sin = new Sin();
+    }
+
+    public double evalTask(double x, double eps) {
         double res;
         if (x < 0 || x < eps) {
-            res = Math.pow((Math.pow(evalSec(x, eps), 2) + evalCsc(x, eps)), 6) / evalSin(x, eps);
+            res = Math.pow((Math.pow(sec.sec(x, eps), 2) + csc.csc(x, eps)), 6) / sin.sin(x, eps);
         } else {
             res = Math.pow(
                     ((evalLog(3, x, eps) + evalLog(5, x, eps)) * evalLog(2, x, eps) / evalLn(x, eps) - evalLog(2, x, eps)) * evalLog(2, x, eps)
@@ -27,13 +45,17 @@ public class TaskFunction {
 
         System.out.println(evalLog(2, 8, 1e-6));
 
-        System.out.println(evalSin(Math.PI, 1e-15));
+        Sin sin = new Sin();
+        System.out.println(sin.sin(Math.PI, 1e-15));
 
-        System.out.println(evalCos(0, 1e-6));
+        Cos cos  = new Cos();
+        System.out.println(cos.cos(0, 1e-6));
 
-        System.out.println(evalSec(0, 0.00001));
+        Sec sec = new Sec();
+        System.out.println(sec.sec(0, 0.00001));
 
-        System.out.println(evalCsc(Math.PI / 2, 0.00001));
+        Csc csc = new Csc();
+        System.out.println(csc.csc(Math.PI / 2, 0.00001));
 
     }
 }
