@@ -1,10 +1,3 @@
-import logarithmic.CommonLogarithm;
-import logarithmic.NaturalLogarithm;
-import trigonometric.Cos;
-import trigonometric.Csc;
-import trigonometric.Sec;
-import trigonometric.Sin;
-
 import static logarithmic.CommonLogarithm.evalLog;
 import static trigonometric.Cos.evalCos;
 import static trigonometric.Csc.evalCsc;
