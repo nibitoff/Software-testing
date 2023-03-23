@@ -17,14 +17,4 @@ public class Sec {
         return result;
     }
 
-    public double writeSecToCSV(double x, double eps, Writer out) {
-        double res = sec(x, eps);
-        try (CSVPrinter printer = CSVFormat.DEFAULT.print(out)) {
-            printer.printRecord(x, res);
-        } catch (IOException e) {
-            System.out.println("Wrong filename");
-        }
-        return res;
-    }
-
 }

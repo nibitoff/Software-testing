@@ -35,13 +35,4 @@ public class Sin {
         if (Math.abs(result) < eps) return 0;
         return result;
     }
-    public double writeSinToCSV(double x, double eps, Writer out) {
-        double res = sin(x, eps);
-        try (CSVPrinter printer = CSVFormat.DEFAULT.print(out)) {
-            printer.printRecord(x, res);
-        } catch (IOException e) {
-            System.out.println("Wrong filename");
-        }
-        return res;
-    }
 }

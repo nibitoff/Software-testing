@@ -16,14 +16,4 @@ public class Csc {
         result = 1 / sinValue;
         return result;
     }
-
-    public double writeCscToCSV(double x, double eps, Writer out) {
-        double res = csc(x, eps);
-        try (CSVPrinter printer = CSVFormat.DEFAULT.print(out)) {
-            printer.printRecord(x, res);
-        } catch (IOException e) {
-            System.out.println("Wrong filename");
-        }
-        return res;
-    }
 }
