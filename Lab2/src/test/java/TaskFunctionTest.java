@@ -29,7 +29,7 @@ public class TaskFunctionTest {
     static Reader lnIn;
     static Reader log2In;
     static Reader log10In;
-    static double eps = 0.01;
+    static double eps = 0.000001;
 
 
     @BeforeAll
@@ -131,7 +131,7 @@ public class TaskFunctionTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
     void testFunctionOnSin(double value, double expected) {
-        TaskFunction function = new TaskFunction(logMock, lnMock, new Sec(cosMock), cscMock, sinMock);
+        TaskFunction function = new TaskFunction(logMock, lnMock, new Sec(new Cos(new Sin())), cscMock, sinMock);
         Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
     }
 

@@ -1,6 +1,17 @@
 package trigonometric;
 
 public class Cos {
+    private final Sin sin;
+
+    public Cos(Sin sin) {
+        this.sin = sin;
+    }
+
+    public Cos() {
+        this.sin = new Sin();
+    }
+
+
     public double cos(double x, double eps) {
         Sin sin = new Sin();
         double result = 0;
