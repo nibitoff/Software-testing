@@ -137,4 +137,18 @@ public class TaskFunctionTest {
 
 
 
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
+    void testFunctionOnCommonLog(double value, double expected) {
+        TaskFunction function = new TaskFunction(new CommonLogarithm(lnMock), lnMock, secMock, cscMock, sinMock);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
+    void testFunctionOnNaturalLog(double value, double expected) {
+        TaskFunction function = new TaskFunction(new CommonLogarithm(), new NaturalLogarithm(), secMock, cscMock, sinMock);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+    }
+
 }
