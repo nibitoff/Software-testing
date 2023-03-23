@@ -6,6 +6,7 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
+import taskFunction.TaskFunction;
 import trigonometric.*;
 import logarithmic.*;
 
@@ -15,16 +16,31 @@ import java.io.IOException;
 import java.io.Reader;
 
 public class TaskFunctionTest {
+    static Sec secMock;
+    static Cos cosMock;
+    static Sin sinMock;
+    static Csc cscMock;
+    static NaturalLogarithm lnMock;
+    static CommonLogarithm logMock;
+
+    static Reader secIn;
+    static Reader cosIn;
+    static Reader sinIn;
+    static Reader lnIn;
+    static Reader log2In;
+    static Reader log10In;
+    static double eps = 0.01;
+
+
     @BeforeAll
     public static void initTest() throws IOException {
-        Cos cosMock = Mockito.mock(Cos.class);
-        Csc cscMock = Mockito.mock(Csc.class);
-        Sec secMock = Mockito.mock(Sec.class);
-        Sin sinMock = Mockito.mock(Sin.class);
-        CommonLogarithm logMock = Mockito.mock(CommonLogarithm.class);
-        NaturalLogarithm lnMock = Mockito.mock(NaturalLogarithm.class);
+        cosMock = Mockito.mock(Cos.class);
+        cscMock = Mockito.mock(Csc.class);
+        secMock = Mockito.mock(Sec.class);
+        sinMock = Mockito.mock(Sin.class);
+        logMock = Mockito.mock(CommonLogarithm.class);
+        lnMock = Mockito.mock(NaturalLogarithm.class);
 
-        double eps = 0.01;
         Reader secIn;
         Reader cosIn;
         Reader sinIn;
@@ -89,12 +105,29 @@ public class TaskFunctionTest {
 
     }
 
+
     @ParameterizedTest
-    @CsvFileSource(resources = "/CsvFiles/Inputs/SystemIn.csv")
-    void testWithSec(double value, double expected) {
-        Function function = new Function(new Sec(cosMock), lnMock, logMock);
-        Assertions.assertEquals(expected, function.SystemSolve(value, functionEps), eps);
+    @CsvFileSource(resources = "/src/main/java/resources/Inputs/FunctionIn.csv")
+    void testFunctionWithMocks(double value, double expected) {
+        TaskFunction function = new TaskFunction(logMock, lnMock, secMock, cscMock, sinMock);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+/*
+        try {
+            Assertions.assertEquals(expected, function.writeResultToCSV(value, functionEps,
+                    new FileWriter("C:\\Users\\egorm\\IdeaProjects\\TpoLab2\\src\\main\\resources\\CsvFiles\\Outputs\\SystemOut.csv", true)), eps);
+        } catch (IOException e) {
+            System.err.println("Да как ты это делаешь ");
+        }
+*/
+
     }
+
+//    @ParameterizedTest
+//    @CsvFileSource(resources = "/CsvFiles/Inputs/SystemIn.csv")
+//    void testWithSec(double value, double expected) {
+//        TaskFunction function = new TaskFunction(new Sec(cosMock), lnMock, logMock);
+//        Assertions.assertEquals(expected, function.SystemSolve(value, functionEps), eps);
+//    }
 
 
 
