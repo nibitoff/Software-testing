@@ -1,4 +1,4 @@
-package trigonometric;
+pckage trigonometric;
 
 import static trigonometric.Cos.evalCos;
 

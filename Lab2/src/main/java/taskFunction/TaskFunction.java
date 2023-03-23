@@ -8,6 +8,8 @@ import static trigonometric.Sec.evalSec;
 import static trigonometric.Sin.evalSin;
 
 public class TaskFunction {
+    // ((sec(x)^2 + csc(x))^6)/sin(x) x >= 0
+    // (( ((log base 3 x + log base 5 x) / (ln x / log base 2 x)) - log  base 3 x) * log  base 2 x)^2 < 0
     public static double evalTask(double x, double eps) {
         double res;
         if (x < 0 || x < eps) {
@@ -24,7 +26,6 @@ public class TaskFunction {
         System.out.println("lab 2");
 
         System.out.println(evalLog(2, 8, 1e-6));
-
 
         System.out.println(evalSin(Math.PI, 1e-15));
 
