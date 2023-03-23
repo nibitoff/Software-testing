@@ -1,9 +1,14 @@
 package logarithmic;
 
-import static logarithmic.NaturalLogarithm.evalLn;
 
 public class CommonLogarithm {
-    public static double evalLog(double a, double b, double esp) {
-        return evalLn(b, esp) / evalLn(a, esp);
+    private NaturalLogarithm ln;
+
+    public CommonLogarithm(){
+        ln = new NaturalLogarithm();
+    }
+
+    public double log(double a, double b, double esp) {
+        return ln.ln(b, esp) / ln.ln(a, esp);
     }
 }

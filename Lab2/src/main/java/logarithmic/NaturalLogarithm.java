@@ -2,7 +2,7 @@ package logarithmic;
 
 public class NaturalLogarithm {
 
-    public static double evalLn(double x, double eps) {
+    public double ln(double x, double eps) {
         if (Double.isNaN(x) || x < (double) 0) {
             return Double.NaN;
         } else if (x == Double.POSITIVE_INFINITY) {
