@@ -25,7 +25,7 @@ public class Cos {
         //correcting sign
         if (x > Math.PI / 2 || x < -Math.PI / 2) {
             result = -1 * Math.sqrt(1 - sin.sin(x, eps) * sin.sin(x, eps));
-        } else if  (x > Math.PI / 2 || x < -Math.PI / 2) {
+        } else {
             result = Math.sqrt(1 - sin.sin(x, eps) * sin.sin(x, eps));
         }
         if (Math.abs(result) > 1) return Double.NaN;
