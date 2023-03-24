@@ -1,16 +1,18 @@
+import logarithmic.CommonLogarithm;
+import logarithmic.NaturalLogarithm;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvFileSource;
-import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
 import taskFunction.TaskFunction;
-import trigonometric.*;
-import logarithmic.*;
+import trigonometric.Cos;
+import trigonometric.Csc;
+import trigonometric.Sec;
+import trigonometric.Sin;
 
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -31,7 +33,7 @@ public class TaskFunctionTest {
     static Reader log2In;
     static Reader log5In;
     static Reader log3In;
-    static double eps = 0.000001;
+    static double eps = 0.0000000001;
     static double feps = 0.0001;
 
 
@@ -43,7 +45,7 @@ public class TaskFunctionTest {
         sinMock = Mockito.mock(Sin.class);
         logMock = Mockito.mock(CommonLogarithm.class);
         lnMock = Mockito.mock(NaturalLogarithm.class);
-        try{
+        try {
             cscIn = new FileReader("src/main/resources/Inputs/CscIn.csv");
             cosIn = new FileReader("src/main/resources/Inputs/CosIn.csv");
             secIn = new FileReader("src/main/resources/Inputs/SecIn.csv");
@@ -60,7 +62,7 @@ public class TaskFunctionTest {
             }
             records = CSVFormat.DEFAULT.parse(cscIn);
             for (CSVRecord record : records) {
-                Mockito.when(secMock.sec(Double.parseDouble(record.get(0)), eps)).thenReturn(Double.valueOf(record.get(1)));
+                Mockito.when(cscMock.csc(Double.parseDouble(record.get(0)), eps)).thenReturn(Double.valueOf(record.get(1)));
             }
             records = CSVFormat.DEFAULT.parse(secIn);
             for (CSVRecord record : records) {
@@ -121,8 +123,6 @@ public class TaskFunctionTest {
         TaskFunction function = new TaskFunction(logMock, lnMock, new Sec(new Cos(new Sin())), cscMock, sinMock);
         Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
     }
-
-
 
     @ParameterizedTest
     @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
