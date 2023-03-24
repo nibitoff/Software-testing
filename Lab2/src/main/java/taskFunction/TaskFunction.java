@@ -38,7 +38,7 @@ public class TaskFunction {
             res = Math.pow((Math.pow(sec.sec(x, eps), 2) + csc.csc(x, eps)), 6) / sin.sin(x, eps);
         } else {
             res = Math.pow(
-                    ((log.log(3, x, eps) + log.log(5, x, eps)) * log.log(2, x, eps) / ln.ln(x, eps) - log.log(2, x, eps)) * log.log(2, x, eps)
+                    ((log.log(3, x, eps) + log.log(5, x, eps)) * log.log(2, x, eps) / ln.ln(x, eps) - log.log(3, x, eps)) * log.log(2, x, eps)
                     , 2);
         }
         return res;
