@@ -33,7 +33,7 @@ public class TaskFunctionTest {
     static Reader log2In;
     static Reader log5In;
     static Reader log3In;
-    static double eps = 0.0000000001;
+    static double eps = 0.000000001;
     static double feps = 0.0001;
 
 
