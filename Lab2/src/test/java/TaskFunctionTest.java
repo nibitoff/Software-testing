@@ -81,13 +81,13 @@ public class TaskFunctionTest {
             for (CSVRecord record : records) {
                 Mockito.when(logMock.log(2, Double.parseDouble(record.get(0)), eps)).thenReturn(Double.valueOf(record.get(1)));
             }
-            records = CSVFormat.DEFAULT.parse(log5In);
-            for (CSVRecord record : records) {
-                Mockito.when(logMock.log(5, Double.parseDouble(record.get(0)), eps)).thenReturn(Double.valueOf(record.get(1)));
-            }
             records = CSVFormat.DEFAULT.parse(log3In);
             for (CSVRecord record : records) {
                 Mockito.when(logMock.log(3, Double.parseDouble(record.get(0)), eps)).thenReturn(Double.valueOf(record.get(1)));
+            }
+            records = CSVFormat.DEFAULT.parse(log3In);
+            for (CSVRecord record : records) {
+                Mockito.when(logMock.log(5, Double.parseDouble(record.get(0)), eps)).thenReturn(Double.valueOf(record.get(1)));
             }
         } catch (IOException ex) {
             System.err.println("IO ERROR!");
