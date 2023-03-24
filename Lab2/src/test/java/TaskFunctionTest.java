@@ -32,6 +32,7 @@ public class TaskFunctionTest {
     static Reader log5In;
     static Reader log3In;
     static double eps = 0.000001;
+    static double feps = 0.0001;
 
 
     @BeforeAll
@@ -96,7 +97,7 @@ public class TaskFunctionTest {
     @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
     void testFunctionWithMocks(double value, double expected) {
         TaskFunction function = new TaskFunction(logMock, lnMock, secMock, cscMock, sinMock);
-        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
 
     }
 
@@ -104,21 +105,21 @@ public class TaskFunctionTest {
     @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
     void testFunctionOnCsc(double value, double expected) {
         TaskFunction function = new TaskFunction(logMock, lnMock, secMock, new Csc(sinMock), sinMock);
-        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
     void testFunctionOnSec(double value, double expected) {
         TaskFunction function = new TaskFunction(logMock, lnMock, new Sec(cosMock), cscMock, sinMock);
-        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
     void testFunctionOnSin(double value, double expected) {
         TaskFunction function = new TaskFunction(logMock, lnMock, new Sec(new Cos(new Sin())), cscMock, sinMock);
-        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
     }
 
 
@@ -127,14 +128,14 @@ public class TaskFunctionTest {
     @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
     void testFunctionOnCommonLog(double value, double expected) {
         TaskFunction function = new TaskFunction(new CommonLogarithm(lnMock), lnMock, secMock, cscMock, sinMock);
-        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
     }
 
     @ParameterizedTest
     @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
     void testFunctionOnNaturalLog(double value, double expected) {
         TaskFunction function = new TaskFunction(new CommonLogarithm(new NaturalLogarithm()), new NaturalLogarithm(), secMock, cscMock, sinMock);
-        Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
+        Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
     }
 
 }

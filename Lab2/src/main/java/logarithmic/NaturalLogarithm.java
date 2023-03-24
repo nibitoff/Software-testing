@@ -10,7 +10,6 @@ public class NaturalLogarithm {
         } else if (x == 0.0) {
             return Double.NEGATIVE_INFINITY;
         }
-
         double res = 0;
         int step = 1;
 //        double addition = Math.pow(-1, step + 1) * Math.pow(x, step) / step;
