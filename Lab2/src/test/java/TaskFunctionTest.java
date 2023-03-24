@@ -27,8 +27,10 @@ public class TaskFunctionTest {
     static Reader cosIn;
     static Reader sinIn;
     static Reader lnIn;
+    static Reader cscIn;
     static Reader log2In;
-    static Reader log10In;
+    static Reader log5In;
+    static Reader log3In;
     static double eps = 0.000001;
 
 
@@ -40,31 +42,17 @@ public class TaskFunctionTest {
         sinMock = Mockito.mock(Sin.class);
         logMock = Mockito.mock(CommonLogarithm.class);
         lnMock = Mockito.mock(NaturalLogarithm.class);
+      //  try{
+            cscIn = new FileReader("src/main/resources/Inputs/CscIn.csv");
+            cosIn = new FileReader("src/main/resources/Inputs/CosIn.csv");
+            secIn = new FileReader("src/main/resources/Inputs/SecIn.csv");
+            sinIn = new FileReader("src/main/resources/Inputs/SinIn.csv");
+            lnIn = new FileReader("src/main/resources/Inputs/LnIn.csv");
+            log2In = new FileReader("src/main/resources/Inputs/Log2In.csv");
+            log5In = new FileReader("src/main/resources/Inputs/Log5In.csv");
+            log3In = new FileReader("src/main/resources/Inputs/Log3In.csv");
 
-        Reader secIn;
-        Reader cosIn;
-        Reader sinIn;
-        Reader cscIn;
-        Reader lnIn;
-        Reader log2In;
-        Reader log5In;
-        Reader log3In;
-
-        //        cosMock = Mockito.mock(Cos.class);
-//        sinMock = Mockito.mock(Sin.class);
-//        lnMock = Mockito.mock(NaturalLogarithm.class);
-//        logMock = Mockito.mock(CommonLogarithm.class);
-//        cscMock = Mockito.mock(Csc.class);
-
-        try{
-            cscIn = new FileReader("src/main/java/resources/Inputs/CscOut.csv");
-            cosIn = new FileReader("src/main/java/resources/Inputs/CosOut.csv");
-            secIn = new FileReader("src/main/java/resources/Inputs/SecOut.csv");
-            sinIn = new FileReader("src/main/java/resources/Inputs/SinOut.csv");
-            lnIn = new FileReader("src/main/java/resources/Inputs/LnOut.csv");
-            log2In = new FileReader("src/main/java/resources/Inputs/Log2Out.csv");
-            log5In = new FileReader("src/main/java/resources/Inputs/Log5Out.csv");
-            log3In = new FileReader("src/main/java/resources/Inputs/Log3Out.csv");
+            System.out.println("AAAAAAAAAAAAAAAAA" + cscIn);
 
             Iterable<CSVRecord> records;
             records = CSVFormat.DEFAULT.parse(cosIn);
@@ -99,9 +87,9 @@ public class TaskFunctionTest {
             for (CSVRecord record : records) {
                 Mockito.when(logMock.log(3, Double.parseDouble(record.get(0)), eps)).thenReturn(Double.valueOf(record.get(1)));
             }
-        } catch (IOException ex) {
-            System.err.println("IO ERROR!");
-        }
+//        } catch (IOException ex) {
+//            System.err.println("IO ERROR!");
+//        }
 
     }
 
