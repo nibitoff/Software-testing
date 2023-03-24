@@ -2,7 +2,6 @@ package taskFunction;
 
 import logarithmic.CommonLogarithm;
 import logarithmic.NaturalLogarithm;
-import trigonometric.Cos;
 import trigonometric.Csc;
 import trigonometric.Sec;
 import trigonometric.Sin;
@@ -14,7 +13,7 @@ public class TaskFunction {
     Csc csc;
     Sin sin;
 
-    public TaskFunction(){
+    public TaskFunction() {
         log = new CommonLogarithm();
         ln = new NaturalLogarithm();
         sec = new Sec();
@@ -37,6 +36,10 @@ public class TaskFunction {
         if (x < 0 || x < eps) {
             res = Math.pow((Math.pow(sec.sec(x, eps), 2) + csc.csc(x, eps)), 6) / sin.sin(x, eps);
         } else {
+            System.out.println(log.log(2, x, eps));
+            System.out.println(log.log(3, x, eps));
+            System.out.println(log.log(5, x, eps));
+            System.out.println(ln.ln(x, eps));
             res = Math.pow(
                     ((log.log(3, x, eps) + log.log(5, x, eps)) * log.log(2, x, eps) / ln.ln(x, eps) - log.log(3, x, eps)) * log.log(2, x, eps)
                     , 2);
