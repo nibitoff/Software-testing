@@ -102,7 +102,7 @@ public class TaskFunctionTest {
         TaskFunction function = new TaskFunction(logMock, lnMock, secMock, cscMock, sinMock);
         Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
         csvLog.setFilePath("src/main/resources/Outputs/FunctionOut.csv");
-        csvLog.logger(expected, function.evalTask(value, eps), feps);
+        csvLog.logger(expected,value, function.evalTask(value, eps));
     }
 
     @ParameterizedTest
@@ -110,8 +110,6 @@ public class TaskFunctionTest {
     void testFunctionOnCsc(double value, double expected) {
         TaskFunction function = new TaskFunction(logMock, lnMock, secMock, new Csc(sinMock), sinMock);
         Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
-        csvLog.setFilePath("src/main/resources/Outputs/CscOut.csv");
-        csvLog.logger(expected, function.evalTask(value, eps), feps);
     }
 
     @ParameterizedTest
@@ -119,8 +117,6 @@ public class TaskFunctionTest {
     void testFunctionOnSec(double value, double expected) {
         TaskFunction function = new TaskFunction(logMock, lnMock, new Sec(cosMock), cscMock, sinMock);
         Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
-        csvLog.setFilePath("src/main/resources/Outputs/SecOut.csv");
-        csvLog.logger(expected, function.evalTask(value, eps), feps);
     }
 
     @ParameterizedTest
@@ -128,8 +124,6 @@ public class TaskFunctionTest {
     void testFunctionOnSin(double value, double expected) {
         TaskFunction function = new TaskFunction(logMock, lnMock, new Sec(new Cos(new Sin())), cscMock, sinMock);
         Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
-        csvLog.setFilePath("src/main/resources/Outputs/SinOut.csv");
-        csvLog.logger(expected, function.evalTask(value, eps), feps);
     }
 
 
@@ -138,8 +132,6 @@ public class TaskFunctionTest {
     void testFunctionOnCommonLog(double value, double expected) {
         TaskFunction function = new TaskFunction(new CommonLogarithm(lnMock), lnMock, secMock, cscMock, sinMock);
         Assertions.assertEquals(expected, function.evalTask(value, eps), feps);
-        csvLog.setFilePath("src/main/resources/Outputs/LogOut.csv");
-        csvLog.logger(expected, function.evalTask(value, eps), feps);
     }
 
     @ParameterizedTest
@@ -158,7 +150,7 @@ public class TaskFunctionTest {
         Csc function = new Csc(sinMock);
         Assertions.assertEquals(expected, function.csc(value, eps), feps);
         csvLog.setFilePath("src/main/resources/Outputs/CscOut.csv");
-        csvLog.logger(expected, function.csc(value, eps), feps);
+        csvLog.logger(expected,value, function.csc(value, eps));
 
     }
 
@@ -168,7 +160,7 @@ public class TaskFunctionTest {
         Sec function = new Sec(cosMock);
         Assertions.assertEquals(expected, function.sec(value, eps), feps);
         csvLog.setFilePath("src/main/resources/Outputs/SecOut.csv");
-        csvLog.logger(expected, function.sec(value, eps), feps);
+        csvLog.logger(expected,value, function.sec(value, eps));
     }
 
     @ParameterizedTest
@@ -177,7 +169,7 @@ public class TaskFunctionTest {
         Sin function = new Sin();
         Assertions.assertEquals(expected, function.sin(value, eps), feps);
         csvLog.setFilePath("src/main/resources/Outputs/SinOut.csv");
-        csvLog.logger(expected, function.sin(value, eps), feps);
+        csvLog.logger(expected,value, function.sin(value, eps));
     }
 
     @ParameterizedTest
@@ -186,7 +178,7 @@ public class TaskFunctionTest {
         CommonLogarithm log = new CommonLogarithm(new NaturalLogarithm());
         Assertions.assertEquals(expected, log.log(2,value, eps), feps);
         csvLog.setFilePath("src/main/resources/Outputs/Log2Out.csv");
-        csvLog.logger(expected, log.log(2, value, eps), feps);
+        csvLog.logger(expected,value, log.log(2, value, eps));
     }
     @ParameterizedTest
     @CsvFileSource(resources = "/Inputs/Log3In.csv")
@@ -194,7 +186,7 @@ public class TaskFunctionTest {
         CommonLogarithm log = new CommonLogarithm(new NaturalLogarithm());
         Assertions.assertEquals(expected, log.log(3,value, eps), feps);
         csvLog.setFilePath("src/main/resources/Outputs/Log3Out.csv");
-        csvLog.logger(expected, log.log(3, value, eps), feps);
+        csvLog.logger(expected,value, log.log(3, value, eps));
     }
 
     @ParameterizedTest
@@ -203,7 +195,7 @@ public class TaskFunctionTest {
         CommonLogarithm log = new CommonLogarithm(new NaturalLogarithm());
         Assertions.assertEquals(expected, log.log(5,value, eps), feps);
         csvLog.setFilePath("src/main/resources/Outputs/Log5Out.csv");
-        csvLog.logger(expected, log.log(5, value, eps), feps);
+        csvLog.logger(expected,value, log.log(5, value, eps));
     }
 
     @ParameterizedTest
@@ -212,6 +204,6 @@ public class TaskFunctionTest {
         NaturalLogarithm log = new NaturalLogarithm();
         Assertions.assertEquals(expected, log.ln(value, eps), feps);
         csvLog.setFilePath("src/main/resources/Outputs/LnOut.csv");
-        csvLog.logger(expected, log.ln( value, eps), feps);
+        csvLog.logger(expected,value, log.ln(value, eps));
     }
 }
