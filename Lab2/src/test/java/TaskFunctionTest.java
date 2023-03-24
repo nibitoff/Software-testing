@@ -42,7 +42,7 @@ public class TaskFunctionTest {
         sinMock = Mockito.mock(Sin.class);
         logMock = Mockito.mock(CommonLogarithm.class);
         lnMock = Mockito.mock(NaturalLogarithm.class);
-      //  try{
+        try{
             cscIn = new FileReader("src/main/resources/Inputs/CscIn.csv");
             cosIn = new FileReader("src/main/resources/Inputs/CosIn.csv");
             secIn = new FileReader("src/main/resources/Inputs/SecIn.csv");
@@ -51,8 +51,6 @@ public class TaskFunctionTest {
             log2In = new FileReader("src/main/resources/Inputs/Log2In.csv");
             log5In = new FileReader("src/main/resources/Inputs/Log5In.csv");
             log3In = new FileReader("src/main/resources/Inputs/Log3In.csv");
-
-            System.out.println("AAAAAAAAAAAAAAAAA" + cscIn);
 
             Iterable<CSVRecord> records;
             records = CSVFormat.DEFAULT.parse(cosIn);
@@ -83,13 +81,13 @@ public class TaskFunctionTest {
             for (CSVRecord record : records) {
                 Mockito.when(logMock.log(5, Double.parseDouble(record.get(0)), eps)).thenReturn(Double.valueOf(record.get(1)));
             }
-            records = CSVFormat.DEFAULT.parse(log5In);
+            records = CSVFormat.DEFAULT.parse(log3In);
             for (CSVRecord record : records) {
                 Mockito.when(logMock.log(3, Double.parseDouble(record.get(0)), eps)).thenReturn(Double.valueOf(record.get(1)));
             }
-//        } catch (IOException ex) {
-//            System.err.println("IO ERROR!");
-//        }
+        } catch (IOException ex) {
+            System.err.println("IO ERROR!");
+        }
 
     }
 
@@ -135,7 +133,7 @@ public class TaskFunctionTest {
     @ParameterizedTest
     @CsvFileSource(resources = "/Inputs/FunctionIn.csv")
     void testFunctionOnNaturalLog(double value, double expected) {
-        TaskFunction function = new TaskFunction(new CommonLogarithm(), new NaturalLogarithm(), secMock, cscMock, sinMock);
+        TaskFunction function = new TaskFunction(new CommonLogarithm(new NaturalLogarithm()), new NaturalLogarithm(), secMock, cscMock, sinMock);
         Assertions.assertEquals(expected, function.evalTask(value, eps), eps);
     }
 
