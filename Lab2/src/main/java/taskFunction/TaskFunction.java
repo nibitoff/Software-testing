@@ -74,7 +74,7 @@ public class TaskFunction {
         System.out.println(res);
 
         Sin sin = new Sin();
-//        sin.getPoints(-3, 3, 0.01);
+        sin.getPoints(-10, 10, 0.001);
 
         f.getPoints(-10, 10, 0.001);
     }
