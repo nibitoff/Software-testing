@@ -49,7 +49,7 @@ public class TaskFunction {
 
         TaskFunction f = new TaskFunction();
 
-        double res = f.evalTask(-0.523599, 0.000001);
+        double res = f.evalTask(-0.523599, 0.0001);
         System.out.println(res);
     }
 }
