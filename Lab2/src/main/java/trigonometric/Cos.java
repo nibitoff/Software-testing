@@ -13,7 +13,9 @@ public class Cos {
 
 
     public double cos(double x, double eps) {
-        Sin sin = new Sin();
+        double x_init = x;
+        x %= Math.PI * 2;
+        //Sin sin = new Sin();
         double result = 0;
         if(x == Double.POSITIVE_INFINITY || x == Double.NEGATIVE_INFINITY){
             return Double.NaN;
@@ -29,9 +31,9 @@ public class Cos {
         }
         //correcting sign
         if (x > Math.PI / 2 || x < -Math.PI / 2) {
-            result = -1 * Math.sqrt(1 - sin.sin(x, eps) * sin.sin(x, eps));
+            result = -1 * Math.sqrt(1 - sin.sin(x_init, eps) * sin.sin(x_init, eps));
         } else {
-            result = Math.sqrt(1 - sin.sin(x, eps) * sin.sin(x, eps));
+            result = Math.sqrt(1 - sin.sin(x_init, eps) * sin.sin(x_init, eps));
         }
         if (Math.abs(result) > 1) return Double.NaN;
         if (Math.abs(result) <= eps) return 0;
