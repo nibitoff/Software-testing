@@ -1,0 +1,163 @@
+{
+  "id": "d9423044-8b2f-44ef-a355-e2708c5c3a15",
+  "version": "3.0",
+  "name": "NonAuthUser_Test",
+  "url": "http://www.google.com",
+  "tests": [{
+    "id": "6e14527b-0298-413c-befc-ebf8225bcddf",
+    "name": "Job_AlphabetSearch",
+    "commands": [{
+      "id": "9842164d-f2cf-4d9d-96d4-bc0c8562a9d1",
+      "comment": "",
+      "command": "open",
+      "target": "https://xing.com",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e74b61ac-b798-482a-a4a3-0145df190c2d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.DirectoryNavigationstyle__NavigationContainer-sc-186a0la-1:nth-child(2) .DirectoryNavigationstyle__ListItem-sc-186a0la-3:nth-child(9) > .DirectoryNavigationstyle__Link-sc-186a0la-4",
+      "targets": [
+        ["css=.DirectoryNavigationstyle__NavigationContainer-sc-186a0la-1:nth-child(2) .DirectoryNavigationstyle__ListItem-sc-186a0la-3:nth-child(9) > .DirectoryNavigationstyle__Link-sc-186a0la-4", "css:finder"],
+        ["xpath=(//a[contains(text(),'I')])[2]", "xpath:link"],
+        ["xpath=//div[@id='javascript-content']/div[3]/div[2]/ul/li[9]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://www.xing.com/jobs/directory/i/')]", "xpath:href"],
+        ["xpath=//div[2]/ul/li[9]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "02540105-81c8-46fc-851f-e5f549fd9f88",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=iOS Developer",
+      "targets": [
+        ["linkText=iOS Developer", "linkText"],
+        ["css=.list-itemstyles__ListItem-sc-1gn6w7u-0:nth-child(22) .jobs-directory-sectionstyles__Link-sc-1wxpdia-3", "css:finder"],
+        ["xpath=//a[contains(text(),'iOS Developer')]", "xpath:link"],
+        ["xpath=//main[@id='content']/div/div/ul[2]/li[22]/p/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/jobs/t-ios-developer')]", "xpath:href"],
+        ["xpath=//li[22]/p/a", "xpath:position"],
+        ["xpath=//a[contains(.,'iOS Developer')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e638301f-46b6-486e-9272-cf61a475176b",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cf8b225f-c52d-4545-b3c8-93184236f02d",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(1) > .sc-1d9waxr-0 .sc-1gpssxl-0",
+      "targets": [
+        ["css=li:nth-child(1) > .sc-1d9waxr-0 .sc-1gpssxl-0", "css:finder"],
+        ["xpath=//main[@id='content']/div/div/div/section[4]/ul/li/article/a/div/div[2]/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'IOS Entwickler Developer | vollzeit | reisebereitschaft | m/w/d')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "942ac5d6-71d1-4993-91b3-39093f5bbe83",
+      "comment": "",
+      "command": "assertText",
+      "target": "//*[@id=\"content\"]/div/div/div/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/h1",
+      "targets": [],
+      "value": "IOS Entwickler Developer | vollzeit | reisebereitschaft | m/w/d"
+    }]
+  }, {
+    "id": "d5e83bb4-0579-45ec-b6ca-49b0f0bab007",
+    "name": "Job_TypeSearch",
+    "commands": [{
+      "id": "fdf86834-c052-439e-be5e-d981211211b8",
+      "comment": "",
+      "command": "open",
+      "target": "https://xing.com",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b472a43f-27cf-44f1-bcc9-67c557783a66",
+      "comment": "",
+      "command": "click",
+      "target": "id=job-role-auto-complete-input",
+      "targets": [
+        ["id=job-role-auto-complete-input", "id"],
+        ["css=#job-role-auto-complete-input", "css:finder"],
+        ["xpath=//input[@id='job-role-auto-complete-input']", "xpath:attributes"],
+        ["xpath=//div[@id='javascript-content']/main/div/div/div/form/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9186d94-9756-4f4a-af66-d21ec2640d19",
+      "comment": "",
+      "command": "type",
+      "target": "id=job-role-auto-complete-input",
+      "targets": [
+        ["id=job-role-auto-complete-input", "id"],
+        ["css=#job-role-auto-complete-input", "css:finder"],
+        ["xpath=//input[@id='job-role-auto-complete-input']", "xpath:attributes"],
+        ["xpath=//div[@id='javascript-content']/main/div/div/div/form/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "android developer"
+    }, {
+      "id": "94c6fdba-14d0-4578-9b76-19cdc4d5e652",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=job-role-auto-complete-input",
+      "targets": [
+        ["id=job-role-auto-complete-input", "id"],
+        ["css=#job-role-auto-complete-input", "css:finder"],
+        ["xpath=//input[@id='job-role-auto-complete-input']", "xpath:attributes"],
+        ["xpath=//div[@id='javascript-content']/main/div/div/div/form/div/div/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "75a1f814-6a99-4338-9826-d2bea3530092",
+      "comment": "",
+      "command": "click",
+      "target": "css=li:nth-child(1) > .sc-1d9waxr-0 .sc-1gpssxl-0",
+      "targets": [
+        ["css=li:nth-child(1) > .sc-1d9waxr-0 .sc-1gpssxl-0", "css:finder"],
+        ["xpath=//main[@id='content']/div/div/div/section[4]/ul/li/article/a/div/div[2]/h3", "xpath:idRelative"],
+        ["xpath=//h3", "xpath:position"],
+        ["xpath=//h3[contains(.,'Android Car Developer (m/w/d)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "da80ebd7-3eb5-44e6-8b34-3a8da2a5b5ec",
+      "comment": "",
+      "command": "click",
+      "target": "css=.wnpgbw-0",
+      "targets": [
+        ["css=.wnpgbw-0", "css:finder"],
+        ["xpath=//main[@id='content']/div/div/div/div/div/div[2]/div/div/div[2]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Android Car Developer (m/w/d)')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ad25bcce-727c-4bf5-a377-d7e391babd6b",
+      "comment": "",
+      "command": "assertText",
+      "target": "//*[@id=\"content\"]/div/div/div/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/h1",
+      "targets": [],
+      "value": "Android Car Developer (m/w/d)"
+    }]
+  }],
+  "suites": [{
+    "id": "99d3cfb8-6a86-4917-af7b-356f7d4bd237",
+    "name": "New Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 30000,
+    "tests": ["6e14527b-0298-413c-befc-ebf8225bcddf"]
+  }],
+  "urls": ["http://www.google.com/"],
+  "plugins": []
+}
