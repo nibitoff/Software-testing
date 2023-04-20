@@ -17,7 +17,7 @@
       "id": "e74b61ac-b798-482a-a4a3-0145df190c2d",
       "comment": "",
       "command": "click",
-      "target": "css=.DirectoryNavigationstyle__NavigationContainer-sc-186a0la-1:nth-child(2) .DirectoryNavigationstyle__ListItem-sc-186a0la-3:nth-child(9) > .DirectoryNavigationstyle__Link-sc-186a0la-4",
+      "target": "//*[@id=\"javascript-content\"]/div[3]/div[2]/ul/li[9]/a",
       "targets": [
         ["css=.DirectoryNavigationstyle__NavigationContainer-sc-186a0la-1:nth-child(2) .DirectoryNavigationstyle__ListItem-sc-186a0la-3:nth-child(9) > .DirectoryNavigationstyle__Link-sc-186a0la-4", "css:finder"],
         ["xpath=(//a[contains(text(),'I')])[2]", "xpath:link"],
@@ -30,7 +30,7 @@
       "id": "02540105-81c8-46fc-851f-e5f549fd9f88",
       "comment": "",
       "command": "click",
-      "target": "linkText=iOS Developer",
+      "target": "//*[@id=\"content\"]/div/div/ul[2]/li[22]/p/a",
       "targets": [
         ["linkText=iOS Developer", "linkText"],
         ["css=.list-itemstyles__ListItem-sc-1gn6w7u-0:nth-child(22) .jobs-directory-sectionstyles__Link-sc-1wxpdia-3", "css:finder"],
@@ -52,13 +52,8 @@
       "id": "cf8b225f-c52d-4545-b3c8-93184236f02d",
       "comment": "",
       "command": "click",
-      "target": "css=li:nth-child(1) > .sc-1d9waxr-0 .sc-1gpssxl-0",
-      "targets": [
-        ["css=li:nth-child(1) > .sc-1d9waxr-0 .sc-1gpssxl-0", "css:finder"],
-        ["xpath=//main[@id='content']/div/div/div/section[4]/ul/li/article/a/div/div[2]/h3", "xpath:idRelative"],
-        ["xpath=//h3", "xpath:position"],
-        ["xpath=//h3[contains(.,'IOS Entwickler Developer | vollzeit | reisebereitschaft | m/w/d')]", "xpath:innerText"]
-      ],
+      "target": "//*[@id=\"content\"]/div/div/div/section[4]/ul/li[1]/article/a/div/div[2]",
+      "targets": [],
       "value": ""
     }, {
       "id": "942ac5d6-71d1-4993-91b3-39093f5bbe83",
@@ -82,7 +77,7 @@
       "id": "b472a43f-27cf-44f1-bcc9-67c557783a66",
       "comment": "",
       "command": "click",
-      "target": "id=job-role-auto-complete-input",
+      "target": "//*[@id=\"job-role-auto-complete-input\"]",
       "targets": [
         ["id=job-role-auto-complete-input", "id"],
         ["css=#job-role-auto-complete-input", "css:finder"],
@@ -95,7 +90,7 @@
       "id": "c9186d94-9756-4f4a-af66-d21ec2640d19",
       "comment": "",
       "command": "type",
-      "target": "id=job-role-auto-complete-input",
+      "target": "//*[@id=\"job-role-auto-complete-input\"]",
       "targets": [
         ["id=job-role-auto-complete-input", "id"],
         ["css=#job-role-auto-complete-input", "css:finder"],
@@ -108,7 +103,7 @@
       "id": "94c6fdba-14d0-4578-9b76-19cdc4d5e652",
       "comment": "",
       "command": "sendKeys",
-      "target": "id=job-role-auto-complete-input",
+      "target": "//*[@id=\"job-role-auto-complete-input\"]",
       "targets": [
         ["id=job-role-auto-complete-input", "id"],
         ["css=#job-role-auto-complete-input", "css:finder"],
@@ -121,24 +116,12 @@
       "id": "75a1f814-6a99-4338-9826-d2bea3530092",
       "comment": "",
       "command": "click",
-      "target": "css=li:nth-child(1) > .sc-1d9waxr-0 .sc-1gpssxl-0",
+      "target": "//*[@id=\"content\"]/div/div/div/section[4]/ul/li[1]/article/a/div/div[2]",
       "targets": [
         ["css=li:nth-child(1) > .sc-1d9waxr-0 .sc-1gpssxl-0", "css:finder"],
         ["xpath=//main[@id='content']/div/div/div/section[4]/ul/li/article/a/div/div[2]/h3", "xpath:idRelative"],
         ["xpath=//h3", "xpath:position"],
         ["xpath=//h3[contains(.,'Android Car Developer (m/w/d)')]", "xpath:innerText"]
-      ],
-      "value": ""
-    }, {
-      "id": "da80ebd7-3eb5-44e6-8b34-3a8da2a5b5ec",
-      "comment": "",
-      "command": "click",
-      "target": "css=.wnpgbw-0",
-      "targets": [
-        ["css=.wnpgbw-0", "css:finder"],
-        ["xpath=//main[@id='content']/div/div/div/div/div/div[2]/div/div/div[2]/div/h1", "xpath:idRelative"],
-        ["xpath=//h1", "xpath:position"],
-        ["xpath=//h1[contains(.,'Android Car Developer (m/w/d)')]", "xpath:innerText"]
       ],
       "value": ""
     }, {
@@ -148,6 +131,57 @@
       "target": "//*[@id=\"content\"]/div/div/div/div[1]/div[1]/div[2]/div/div[1]/div[2]/div[1]/h1",
       "targets": [],
       "value": "Android Car Developer (m/w/d)"
+    }]
+  }, {
+    "id": "80947bd7-0be0-4ee6-81fd-d51c14a3ed3e",
+    "name": "InterfaceLanguage",
+    "commands": [{
+      "id": "bd078ac2-9be7-48e0-b94e-eedf89a1886d",
+      "comment": "",
+      "command": "open",
+      "target": "https://xing.com",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "327811ad-de6e-4e0a-8b76-32a1c2cb67a8",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"javascript-content\"]/footer/div[2]/div/nav/div/a",
+      "targets": [
+        ["linkText=English", "linkText"],
+        ["css=.ibFZGP", "css:finder"],
+        ["xpath=//div[@id='javascript-content']/footer/div[2]/div/nav/div/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, '/language?sc_o=navigation_footer')]", "xpath:href"],
+        ["xpath=//nav/div/a", "xpath:position"],
+        ["xpath=//a[contains(.,'English')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "d3f07c25-ff14-481b-9bfe-e9605eda15bb",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3472990-463e-452f-9dde-65431b4c5ed2",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"javascript-content\"]/div[2]/div/div[2]/div/div[3]/a",
+      "targets": [
+        ["css=.styles-grid-col-cc34cd95:nth-child(3) .ngcj6c-5", "css:finder"],
+        ["xpath=//div[@id='javascript-content']/div[2]/div/div[2]/div/div[3]/a/div/span", "xpath:idRelative"],
+        ["xpath=//div[3]/a/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'Español')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "28b964ab-68fe-403c-8b1f-22b68447a617",
+      "comment": "",
+      "command": "assertText",
+      "target": "//*[@id=\"javascript-content\"]/div[1]/header/div/nav/a[2]/div/span",
+      "targets": [],
+      "value": "Registrarse"
     }]
   }],
   "suites": [{

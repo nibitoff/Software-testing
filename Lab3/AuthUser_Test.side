@@ -17,51 +17,44 @@
       "id": "026dcdc4-925d-4ed8-a802-6b6030168fa4",
       "comment": "",
       "command": "click",
-      "target": "linkText=Log in",
+      "target": "//*[@id=\"javascript-content\"]/div[1]/header/div/nav/a[1]/div",
       "targets": [],
       "value": ""
     }, {
       "id": "bfdceae3-b356-45f1-9630-33f43cc79eb8",
       "comment": "",
       "command": "sendKeys",
-      "target": "id=username",
+      "target": "//*[@id=\"username\"]",
       "targets": [],
       "value": "niktovicd@gmail.com"
     }, {
       "id": "81fcf177-eb36-41f2-94b2-5f18e864f66e",
       "comment": "",
       "command": "sendKeys",
-      "target": "id=password",
+      "target": "//*[@id=\"password\"]",
       "targets": [],
       "value": "tBy%mvW8s#*CDrhb"
-    }, {
-      "id": "0eb95048-957d-49fa-8096-b33e002e2305",
-      "comment": "",
-      "command": "click",
-      "target": "css=.erMSDu",
-      "targets": [],
-      "value": ""
     }, {
       "id": "4ec16805-78c9-4785-b1a3-b500bcdc7ef1",
       "comment": "",
       "command": "click",
-      "target": "css=.sc-fGFwAa",
+      "target": "//*[@id=\"javascript-content\"]/div[2]/form/button/div",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0eb95048-957d-49fa-8096-b33e002e2305",
+      "comment": "",
+      "command": "click",
+      "target": "//*[@id=\"personalBarProfilePicture\"]",
       "targets": [],
       "value": ""
     }, {
       "id": "240d427a-c397-4a3a-b9c2-a0800d136e19",
       "comment": "",
       "command": "assertText",
-      "target": "css=.sc-dExYQz .sc-eFqGBh",
+      "target": "//*[@id=\"app\"]/div/div[2]/div/div/div[1]/header/div/div[3]/div/div/a[1]/div/figcaption/p",
       "targets": [],
       "value": "Данил Никтович"
-    }, {
-      "id": "48e90b25-7d7b-4717-9760-f659203a1da7",
-      "comment": "",
-      "command": "//assertTitle",
-      "target": "",
-      "targets": [],
-      "value": ""
     }]
   }, {
     "id": "124ee18f-0a45-4bb2-82c1-8a0ee0c15d2e",
